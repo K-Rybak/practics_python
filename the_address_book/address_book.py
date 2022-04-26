@@ -16,12 +16,15 @@ class address_book():
 
 
     def get_contact(self, name):
-        print(address_book.store[name])
+        for key in address_book.store[name]:
+            print(f'{key}:{address_book.store[name][key]}')
 
 
     def get_all_contact(self):
-        for name, address in address_book.store.items():
-            print(f'Контакт {name} с адресом {address}')
+        for name, data in address_book.store.items():
+            print(f'Контакт {name}, данные:')
+            for key, val in data.items():
+                print(f'{key}:{val}')
 
 
     def save_data(self):

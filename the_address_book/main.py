@@ -16,6 +16,22 @@ def user_select(select):
 
         ab.add_contact(contact_name, contact_phone, contact_address, contact_email)
         print('\nДанные успешно добавлены!')
+    elif select == 4:
+        contact_name = input('Введите имя контакта\n>')
+        print('Выберете, что хотите изменить:')
+        print('1 - номер телефона\n2 - адрес\n3 - email\n0 - отмена\n>')
+
+        try:
+            select = int(input('> '))
+            ab.change_contact(contact_name, select)
+            print('Контакт успешно изменен')
+        except ValueError:
+            print('Введите цифру!\n')
+    elif select == 5:
+        contact_name = input('Введите имя контакта\n>')
+        ab.delete_contact(contact_name)
+        print('Контакт успешно удален')
+
     else:
         print('Некоректный ввод! Попробуйте снова')
 
@@ -23,13 +39,15 @@ def user_select(select):
 ab = address_book()
 
 print('''Программа адресная книга
-выберете одно из действий для продолжения
-для выхода введите 0''')
+выберете одно из действий для продолжения''')
 
 while True:
     print('''1 - Вывести все контакты
 2 - Вывести определенный контакт
-3 - Добавить новый контакт''')
+3 - Добавить новый контакт
+4 - Изменить контакт
+5 - Удалить контакт
+0 - введите для выхода''')
 
     try:
         select = int(input('> '))

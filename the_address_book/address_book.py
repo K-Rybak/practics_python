@@ -1,3 +1,4 @@
+import email
 import pickle
 
 class address_book():
@@ -26,6 +27,24 @@ class address_book():
             for key, val in data.items():
                 print(f'{key}:{val}')
 
+
+    def change_contact(self, name, select):
+        if select == 1:
+            print('Введите новый номер')
+            phone = input('> ')
+            address_book.store[name]['phone'] = phone
+        elif select == 2:
+            print('Введите новый адрес')
+            address = input('> ')
+            address_book.store[name]['address'] = address
+        elif select == 3:
+            print('Введите новый адрес почты')
+            email = input('> ')
+            address_book.store[name]['email'] = email
+
+
+    def delete_contact(self, name):
+        del address_book.store[name]
 
     def save_data(self):
         f = open('address_book.data', 'wb')

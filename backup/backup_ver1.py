@@ -14,7 +14,7 @@ path_zip = target_dir + os.sep + time.strftime('%Y%m%d%H%M%S') + '.zip'
 def get_all_file_path(dirs):
     file_path = []
     for dir in dirs:
-        for root, directorias, files in os.walk(dir):
+        for root, files in os.walk(dir):
             for file_name in files:
                 file_path.append(os.path.join(root, file_name))
     return file_path

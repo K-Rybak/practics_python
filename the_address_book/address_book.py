@@ -1,4 +1,3 @@
-import email
 import pickle
 
 class address_book():

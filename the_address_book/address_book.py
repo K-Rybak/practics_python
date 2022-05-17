@@ -8,6 +8,7 @@ class address_book():
         address_book.store = pickle.load(f)
         f.close()
 
+
     def add_contact(self, name, phone, address, email):
         address_book.store[name] = {
             'phone': phone,
@@ -44,6 +45,7 @@ class address_book():
 
     def delete_contact(self, name):
         del address_book.store[name]
+
 
     def save_data(self):
         f = open('address_book.data', 'wb')

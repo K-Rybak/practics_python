@@ -23,5 +23,3 @@ while True:
     except ValueError:
         print('Введите цифру!\n')
         continue
-
-    
